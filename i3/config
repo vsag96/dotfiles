@@ -128,6 +128,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # bar
 bar {
   	status_command /home/vineeth/.pyenv/shims/bumblebee-status -m cpu memory battery time date pasink pasource -p date.format="%a, %b-%d-%Y" time.format="%H:%M:%S" -t gruvbox
+	position top
 	colors {
 		background $bg-color
 	    	separator #757575
