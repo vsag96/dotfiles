@@ -1,0 +1,9 @@
+[user]
+	name = vsag96
+	mail = tv400@snu.edu.in
+	email = tv400@snu.edu.in
+[alias]
+	br=branch
+	ci = commit
+	st = status
+	co=checkout
