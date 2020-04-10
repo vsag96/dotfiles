@@ -11,10 +11,10 @@ hide_edge_borders both
 floating_modifier $mod
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # lock
 bindsym $mod+Shift+x exec i3lock --color 475263
