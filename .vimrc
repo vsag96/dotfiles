@@ -3,9 +3,11 @@ call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug  'rightson/vim-p4-syntax'
 Plug 'psf/black', { 'branch': 'stable' }
-Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'itchyny/lightline.vim'
+Plug 'chriskempson/base16-vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -90,6 +92,13 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+" Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
+for c in range(char2nr('A'), char2nr('Z'))
+  execute 'lnoremap ' . nr2char(c+32) . ' ' . nr2char(c)
+  execute 'lnoremap ' . nr2char(c) . ' ' . nr2char(c+32)
+endfor
+autocmd InsertLeave * set iminsert=0
+
 let g:jedi#use_tabs_not_buffers = 1
 
 set tabstop=4       " number of visual spaces per TAB
@@ -110,3 +119,5 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \}
+
+let base16colorspace=256  " Access colors present in 256 colorspace
